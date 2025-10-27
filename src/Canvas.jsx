@@ -3,7 +3,8 @@ import './styles.css'
 import { meshBounds } from "@react-three/drei"
 
 
-export const App=() => (<Canvas>
+export const App=({position=[-1,0,2.5],fov=25}) => (
+<Canvas camera={{position,fov}}>
   <Shirt/>
 </Canvas>
 )
@@ -11,7 +12,7 @@ export const App=() => (<Canvas>
 function Shirt (){
   return(
     <mesh>
-      <boxGeometry args={[1,1,1]}/>
+      <boxGeometry args={[0.9,0.9,0.9]}/>
       <meshNormalMaterial/>
     </mesh>
   )
